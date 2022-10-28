@@ -8,21 +8,22 @@
     font-size: var(fonte1);
 }
 
-body{
+body {
     background-color: var(--red-p);
 
 }
 
 body::-webkit-scrollbar {
-    width: 7px;
+    width: 1px;
     background-color: var(--red-p);
 }
 
 body::-webkit-scrollbar-thumb {
+    border: 2px solid var(--red-p);
     width: 10px;
     height: 5px;
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--red-p);
 }
 
 /*========================= NAV ==========================*/
@@ -35,16 +36,20 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 10px;
+    box-shadow: 0 0 7px white;
 }
 
-#menu{
+#menu {
     margin: auto 10px;
 }
 
 #menu li {
     display: inline;
+    margin: auto 10px;
 }
-#menu a{
+
+#menu a {
     color: var(cor-texto);
     text-decoration: none;
     background-color: var(--red-p);
@@ -52,9 +57,13 @@ nav {
     border-radius: 3px;
     font-weight: bolder;
     transition: 0.2s;
+
+    box-shadow: 0px 7px 0px 0px rgb(133, 0, 0)
 }
-#menu a:hover{
+
+#menu a:hover {
     background-color: white;
+    box-shadow: none;
     color: var(--red-p);
 }
 
@@ -67,34 +76,148 @@ nav {
 
 /*========================= LAYOUT PRINCIPAL ==========================*/
 
-#container-principal{
+#container-principal {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-#container-side{
+
+#container-side {
     width: 30%;
     border: 3px solid blue;
     height: 41vw;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
-#container-up{
+
+#container-up {
     width: 65%;
     height: 41vw;
     border: 3px solid violet;
 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
 }
-#container-down{
+
+#container-down {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     border: 3px solid aqua;
     margin-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+/*========================= CONTEUDO CONTAINER-SIDE ==========================*/
+#container-side h3 {
+    margin: 10px auto;
+    padding: 10px 120px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.095);
+}
+
+#container-side ul {
+    height: 75%;
+    margin: auto 15px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.095);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#container-side li {
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.268);
+}
+
+#container-side a {
+    text-decoration: none;
+    background-color: var(--cor-texto);
+    color: var(--red-p);
+    padding: 5px 10px;
+    width: 60px;
+    margin-left: 20px;
+    font-weight: bolder;
+    transition: 0.2s;
+    border-radius: 7px 0px;
+}
+
+#container-side a:hover {
+    background-color: var(--red-p);
+    color: var(--cor-texto);
+}
+
+/*========================= CONTEUDO CONTAINER-UP ==========================*/
+#container-up h3 {
+    margin: 10px auto;
+    padding: 10px 350px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.095);
+}
+
+#container-up p {
+    margin: 10px 20px;
+}
+
+/*========================= CONTEUDO CONTAINER-DOWN ==========================*/
+#container-down h3 {
+    margin: 10px auto;
+    padding: 10px 630px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.095);
+}
+
+#container-cards {
+    height: 25vw;
+    width: 95%;
+    border: 2px solid blue;
+
+}
+
+.card {
+    width: 20%;
+    height: 25vw;
+    border: 2px solid purple;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 /*========================= RODAPE ==========================*/
 #rodape {
     width: 100%;
     background-color: white;
+    margin-top: 10px;
+    box-shadow: 0 0 7px white;
 }
 
 
@@ -107,73 +230,79 @@ nav {
         margin: auto;
     }
 
-    #container-up{
+    #container-up {
         width: 100%;
-        
+
     }
 }
+
 @media (width: 425px) {
-    nav{
+    nav {
         height: auto;
     }
-    #logo{
+
+    #logo {
         width: 100%;
         height: 90px;
-        background-position-x: 50% ;
+        background-position-x: 50%;
         margin-bottom: 10px;
     }
-    
+
     #container-side {
         width: 80%;
         height: 90vh;
         margin: auto;
     }
 
-    #container-up{
+    #container-up {
         width: 100%;
 
     }
 }
+
 @media (width: 375px) {
-    nav{
+    nav {
         height: auto;
     }
-    #logo{
+
+    #logo {
         width: 100%;
         height: 90px;
-        background-position-x: 50% ;
+        background-position-x: 50%;
         margin-bottom: 10px;
     }
-    
+
     #container-side {
         width: 90%;
         height: 90vh;
         margin: auto;
     }
 
-    #container-up{
+    #container-up {
         width: 100%;
 
     }
 }
+
 @media (width: 320px) {
-    nav{
+    nav {
         height: auto;
     }
-    #logo{
+
+    #logo {
         width: 100%;
         height: 90px;
-        background-position-x: 50% ;
+        background-position-x: 50%;
         margin-bottom: 10px;
     }
-    
+
     #container-side {
         width: 90%;
         height: 90vh;
         margin: auto;
     }
 
-    #container-up{
+    #container-up {
         width: 100%;
 
     }
